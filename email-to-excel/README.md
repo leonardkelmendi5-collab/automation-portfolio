@@ -14,7 +14,21 @@ The system checks Google Sheets using the Gmail ThreadID to prevent duplicate pr
 If the email thread is new:
 
 A row is added to Google Sheets.
+Technical Architecture
 
+Workflow structure:
+
+Gmail – Watch Emails
+
+Google Sheets – Search Rows (by ThreadID)
+
+Router
+
+If ThreadID not found → Add Row + Send Reply
+
+If ThreadID exists → Do nothing
+
+Duplicate prevention is handled using Gmail ThreadID.
 An automatic reply is sent.
 
 The system logs:
