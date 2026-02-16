@@ -1,15 +1,56 @@
-# Email to Excel Automation
+Email Automation – Gmail to Google Sheets (Make.com)
+Project Overview
 
-## Description
-This automation captures incoming emails and stores relevant data automatically in an Excel or Google Sheets file.
+This project demonstrates an automated email processing workflow built using Make.com.
 
-## Problem
-Manual data entry from emails is time-consuming and error-prone.
+The system monitors incoming Gmail messages, automatically replies to new emails, and logs all relevant data into Google Sheets.
 
-## Solution
-The automation extracts key information from emails and saves it directly into a structured spreadsheet.
+Process Logic
 
-## Value
-- Saves time
-- Reduces manual errors
-- Improves process efficiency
+Gmail module watches incoming emails.
+
+The system checks Google Sheets using the Gmail ThreadID to prevent duplicate processing.
+
+If the email thread is new:
+
+A row is added to Google Sheets.
+
+An automatic reply is sent.
+
+The system logs:
+
+Sender email
+
+Subject
+
+Date
+
+Status
+
+ReplySent (true/false)
+
+ThreadID
+
+MessageID
+
+If the thread already exists:
+
+No duplicate reply is sent.
+
+Technical Concepts Used
+
+Low-Code Automation (Make.com)
+
+Gmail API integration
+
+ThreadID-based deduplication
+
+Router logic (conditional processing)
+
+Status tracking & logging
+
+Basic debugging and error handling
+
+Outcome
+
+The workflow ensures that each email is processed exactly once, preventing duplicate replies and maintaining a structured log for tracking and auditing.
